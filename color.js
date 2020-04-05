@@ -1,8 +1,8 @@
 // Selectors
-var goalDisplay=document.querySelector(".goalColor");
+var goalDisplay=document.querySelector("#goalColor");
 var allSquares=document.querySelectorAll(".square");
 var stat=document.querySelector(".status");
-var header=document.querySelector("#header");
+var header=document.querySelector("#header h1");
 var resetBtn=document.querySelector(".reset");
 var easyBtn=document.querySelector(".easy");
 var hardBtn=document.querySelector(".hard");
@@ -41,7 +41,7 @@ function setAllSquares(color)
 //Main flow
 var num=6;
 var ranColors=generateRandomList(num);
-var clickColor=ranColors[randomNum(num)];
+var clickColor=ranColors[randomNum(num-1)];
 goalDisplay.textContent=clickColor;
 
 for(var i =0; i < allSquares.length; i++ )
@@ -67,14 +67,15 @@ for(var i =0; i < allSquares.length; i++ )
 
 resetBtn.addEventListener("click",function(){
 	ranColors=generateRandomList(num);
-	clickColor=ranColors[randomNum(num)];
+	clickColor=ranColors[randomNum(num)-1];
 	goalDisplay.textContent=clickColor;
 	for(var i =0; i < allSquares.length; i++ )
 	{
 		allSquares[i].style.backgroundColor = ranColors[i];
-		header.style.backgroundColor = "#232323";
+		header.style.backgroundColor = "steelblue";
 	}
-	stat.textContent="";	
+	stat.textContent="";
+	this.textContent="New Colors";	
 });
 
 hardBtn.addEventListener("click",function(){
@@ -98,7 +99,7 @@ easyBtn.addEventListener("click",function(){
 	this.classList.add("active");
 	hardBtn.classList.remove("active");
 	ranColors=generateRandomList(num);
-	clickColor=ranColors[randomNum(num)];
+	clickColor=ranColors[randomNum(num)-1];
 	goalDisplay.textContent=clickColor;
 	console.log(ranColors.length);
 	for(var i =0; i < allSquares.length; i++ )
