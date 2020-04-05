@@ -17,10 +17,6 @@ h1{
 	height:30px;
 }
 
-#stripe button{
-	background-color: white;
-}
-
 .square{
 	width: 30%;
 	background-color: purple;
@@ -28,6 +24,10 @@ h1{
 	margin:1.66%;
 	float: left;
 	border-radius: 20px;
+}
+
+.active{
+	background-color: blue;
 }
 
 
